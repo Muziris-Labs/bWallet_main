@@ -28,7 +28,7 @@ function Navbar() {
             <li key={index} className="p-2">
               <a
                 href={button.link}
-                className="hover:text-[#848484] font-[ClearSans] transition-colors duration-300"
+                className="hover:text-[#848484] font-[ClearSans] transition-colors text-white duration-300"
               >
                 {button.text}
               </a>

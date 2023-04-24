@@ -7,7 +7,7 @@ export default function Logo(props) {
       }}
     >
       <h1
-        className="font-[ClearSans] text-center"
+        className="font-[ClearSans] text-center text-white"
         style={{
           lineHeight: "1",
           fontSize: `${(props.width * 38) / 100}px`,

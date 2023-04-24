@@ -38,16 +38,20 @@ function Home() {
             style={{
               lineHeight: 1.5,
             }}
-            className="text-5xl font-light font-[ClearSans]"
+            className="text-5xl font-light font-[ClearSans] text-white"
           >
             Welcome <br />
-            to <span className="text-7xl font-normal">
+            to{" "}
+            <span className="text-7xl font-normal text-white">
               Bankless Wallet
             </span>{" "}
             <br />
-            with <span className="text-7xl font-normal">All Services</span>{" "}
+            with{" "}
+            <span className="text-7xl font-normal text-white">
+              All Services
+            </span>{" "}
             <br></br>
-            You <span className="text-7xl font-normal">Need!</span>
+            You <span className="text-7xl font-normal text-white">Need!</span>
           </h1>
           <p className="text-3xl text-[#808088] font-light mt-4 max-w-[40ch]">
             Bankless Wallet is a perfect platform for your web3 wallet, just
@@ -81,7 +85,9 @@ function Home() {
                   alt="Connect"
                   className="mb-2"
                 />
-                <h1 className="font-[ClearSans] text-[2vw]">Anoy.eth</h1>
+                <h1 className="font-[ClearSans] text-[2vw] text-white">
+                  Anoy.eth
+                </h1>
                 <h1 className="font-[ClearSans] text-[1.2vw] text-[#808088] max-w-[10ch]">
                   0x3C700d88616C9e186aed <br /> 7dd59B2e7f60819bf863
                 </h1>
