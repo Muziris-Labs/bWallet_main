@@ -18,7 +18,7 @@ const buttonData = [
   },
 ];
 
-function Navbar() {
+function Navbar({handler}) {
   return (
     <div className="w-screen fixed flex justify-between px-[5vw] py-[5vh] items-center">
       <Logo width={100} />
@@ -36,7 +36,7 @@ function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="group text-xl font-normal gap-16 bg-transparent text-[#ffffff] font-[ClearSans] border-[1px] border-[#ffffff] p-4 px-6 justify-between rounded-2xl flex items-center hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-300 hover:cursor-pointer">
+      <div onClick={handler} className="group text-xl font-normal gap-16 bg-transparent text-[#ffffff] font-[ClearSans] border-[1px] border-[#ffffff] p-4 px-6 justify-between rounded-2xl flex items-center hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-300 hover:cursor-pointer">
         <h1>Launch App</h1>
         <div className="bg-[#ffffff] w-[14px] h-[14px] arrowIcon group-hover:bg-[#000000] transition-colors duration-300"></div>
       </div>

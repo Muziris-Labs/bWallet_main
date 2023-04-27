@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Receive from './RightSectionComponents/Receive'
 
 function RightSection() {
   return (
@@ -13,6 +14,7 @@ function RightSection() {
       <h1 className='bg-[#737478] rounded-full text-white px-3 absolute top-[215px]'>
         0x3c....f863
       </h1>
+      <Receive/>
     </div>
   )
 }
