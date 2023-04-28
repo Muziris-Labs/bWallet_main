@@ -8,8 +8,8 @@ function LeftSection() {
   const dispatch = useDispatch();
   const activeButton = useSelector((state) => state.counter.activeButton);
   return (
-    <div className="w-1/4 h-screen flex justify-center items-center">
-      <div className="w-[180px] h-[80%] bg-gradient-to-b from-[#3A3D48] to-[#28292E] flex flex-col justify-start items-center rounded-[50px] pt-[10%]">
+    <div className="ml-[4%] w-1/5 h-screen flex justify-end items-center pr-20">
+      <div className="w-[180px] h-[80%] bg-gradient-to-b from-[#3A3D48] to-[#28292E] flex flex-col justify-center items-center rounded-[50px] ">
         <Logo width={100} />
         <h1 className="text-[#808088] text-lg mt-10">Manage</h1>
         <div

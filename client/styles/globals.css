@@ -69,3 +69,13 @@ body {
 .gradientTab {
   background: linear-gradient(269.52deg, #f099a2 0.41%, #d9d9d9 99.69%);
 }
+
+.scrollFunc::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollFunc {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

@@ -7,20 +7,20 @@ function MidSection() {
   const dispatch = useDispatch();
   const activeSection = useSelector((state) => state.counter.activeSection);
   return (
-    <div className="w-2/4 h-screen flex justify-center items-center">
+    <div className=" w-5/12 h-screen flex justify-center items-center">
       <div className="w-full h-[80%]">
-        <h1 className="text-5xl text-white font-semibold mb-10">Hi, Rahul</h1>
-        <div className="flex flex-row">
-          <div className="bg-[#3A3D48] w-fit flex flex-col rounded-3xl p-5 pr-20">
-            <h1 className="text-base m-2 text-white">Your Balance</h1>
+        <h1 className="text-5xl text-white font-semibold mb-10">Hi, Anoy</h1>
+        <div className="flex flex-row w-[100%]">
+          <div className="bg-[#3A3D48] w-[50%] flex flex-col rounded-3xl p-8 pr-24">
+            <h1 className="text-lg m-2 text-white">Your Balance</h1>
             <h1 className="text-5xl m-2 text-white font-bold mb-9">$1256.70</h1>
             <h1 className="text-base ml-2 text-[#808088] tracking-widest">
               0x3C....f863
             </h1>
           </div>
-          <div className="flex flex-col w-full items-center justify-around">
+          <div className="flex flex-col w-[60%] items-end justify-between">
             <div
-              className="bg-[#3A3D48] text-[#77777f] text-2xl p-5 px-[102px] rounded-3xl hover:cursor-pointer transition-colors duration-300 hover:text-white"
+              className="bg-[#3A3D48] text-[#77777f] text-2xl w-[90%] h-[45%] flex justify-center items-center rounded-3xl hover:cursor-pointer transition-colors duration-300 hover:text-white"
               style={{
                 backgroundColor:
                   activeSection === "portfolio" ? "#ED1C24" : "#3A3D48",
@@ -33,7 +33,7 @@ function MidSection() {
               Your portfolio
             </div>
             <div
-              className=" text-2xl p-5 px-[72px] rounded-3xl text-[#77777f] hover:cursor-pointer transition-colors duration-300 hover:text-white"
+              className=" text-2xl w-[90%] h-[45%] flex justify-center items-center rounded-3xl text-[#77777f] hover:cursor-pointer transition-colors duration-300 hover:text-white"
               style={{
                 backgroundColor:
                   activeSection === "transaction" ? "#ED1C24" : "#3A3D48",
@@ -47,9 +47,12 @@ function MidSection() {
             </div>
           </div>
         </div>
-        <h1 className="text-white text-2xl my-4">Recent Transaction</h1>
-        <Transactions />
-        <Transactions />
+        <h1 className="text-white text-4xl my-8">Recent Transaction</h1>
+        <div className="h-[44%] w-[100%] relative flex flex-col overflow-auto scrollFunc rounded-3xl">
+          <Transactions />
+          <Transactions />
+          <Transactions />
+        </div>
       </div>
     </div>
   );
