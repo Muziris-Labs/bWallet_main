@@ -2,6 +2,8 @@ import React from "react";
 import Transactions from "./Transactions";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveSection } from "@/redux/counterSlice";
+import RecentTransaction from "./MidSectionComponents/RecentTransaction";
+import Portfolio from "./MidSectionComponents/Portfolio";
 
 function MidSection() {
   const dispatch = useDispatch();
@@ -47,12 +49,8 @@ function MidSection() {
             </div>
           </div>
         </div>
-        <h1 className="text-white text-4xl my-8">Recent Transaction</h1>
-        <div className="h-[44%] w-[100%] relative flex flex-col overflow-auto scrollFunc rounded-3xl">
-          <Transactions />
-          <Transactions />
-          <Transactions />
-        </div>
+        {activeSection === "transaction" && <RecentTransaction />}
+        {activeSection === "portfolio" && <Portfolio />}
       </div>
     </div>
   );
