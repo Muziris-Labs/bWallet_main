@@ -6,6 +6,9 @@ import { setActiveButton } from "@/redux/counterSlice";
 
 function LeftSection() {
   const dispatch = useDispatch();
+  const gaslessOnboarding = useSelector(
+    (state) => state.counter.gaslessOnboarding
+  );
   const activeButton = useSelector((state) => state.counter.activeButton);
   return (
     <div className="ml-[4%] w-1/5 h-screen flex justify-end items-center pr-20">
@@ -63,7 +66,13 @@ function LeftSection() {
         <div className="w-[70px] h-[70px] mt-3 flex justify-center items-center">
           <Image src="/breakLine.svg" width={60} height={60} />
         </div>
-        <div className="w-[70px] h-[70px] rounded-full bg-[#393B47] mt-3 flex justify-center items-center hover:bg-[#545768] hover:cursor-pointer">
+        <div
+          className="w-[70px] h-[70px] rounded-full bg-[#393B47] mt-3 flex justify-center items-center hover:bg-[#545768] hover:cursor-pointer"
+          onClick={() => {
+            gaslessOnboarding.logout();
+            window.location.href = "/";
+          }}
+        >
           <Image src="/shutDown.svg" width={20} height={20} />
         </div>
       </div>

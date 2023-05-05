@@ -11,7 +11,7 @@ function MidSection() {
   return (
     <div className=" w-5/12 h-screen flex justify-center items-center">
       <div className="w-full h-[80%]">
-        <h1 className="text-5xl text-white font-semibold mb-10">Hi, Anoy</h1>
+        <h1 className="text-5xl text-white font-semibold mb-10">Dashboard</h1>
         <div className="flex flex-row w-[100%]">
           <div className="bg-[#3A3D48] w-[50%] flex flex-col rounded-3xl p-8 pr-24">
             <h1 className="text-lg m-2 text-white">Your Balance</h1>
