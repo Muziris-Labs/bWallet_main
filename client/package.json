@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gelatonetwork/gasless-onboarding": "^0.0.4",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@reduxjs/toolkit": "^1.9.5",
     "autoprefixer": "10.4.14",

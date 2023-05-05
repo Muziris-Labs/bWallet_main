@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   activeButton: "send",
   activeSection: "portfolio",
+  dialogHandler: false,
 };
 
 export const counterSlice = createSlice({
@@ -15,9 +16,13 @@ export const counterSlice = createSlice({
     setActiveSection: (state, action) => {
       state.activeSection = action.payload;
     },
+    setDialogHandler: (state, action) => {
+      state.dialogHandler = action.payload;
+    },
   },
 });
 
-export const { setActiveButton, setActiveSection } = counterSlice.actions;
+export const { setActiveButton, setActiveSection, setDialogHandler } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

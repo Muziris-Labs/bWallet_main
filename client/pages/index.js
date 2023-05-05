@@ -2,8 +2,45 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
+import { useDispatch, useSelector } from "react-redux";
+import { setDialogHandler } from "@/redux/counterSlice";
+import { GaslessOnboarding } from "@gelatonetwork/gasless-onboarding";
 
 function Home() {
+  const dialogHandler = useSelector((state) => state.counter.dialogHandler);
+  const dispatch = useDispatch();
+
+  const login = async () => {
+    try {
+      if (typeof window === "undefined") throw new Error("window is undefined");
+      const gaslessWalletConfig = {
+        apiKey: "wND5A33KCGWNWWXFwnJBNyCkXyItniVfGcRyWvxWFes_",
+      };
+      const loginConfig = {
+        domains: ["http://localhost:3000/", window.location.origin],
+        chain: {
+          id: 5,
+          rpcUrl:
+            "https://eth-goerli.g.alchemy.com/v2/3IgRi-BWemVdwlXdm7sT6CDf-bS5ECAk",
+        },
+        openLogin: {
+          redirectUrl: "http://localhost:3000/app",
+        },
+      };
+      const gaslessOnboarding = new GaslessOnboarding(
+        loginConfig,
+        gaslessWalletConfig
+      );
+
+      await gaslessOnboarding.init();
+
+      await gaslessOnboarding.login();
+
+      window.location.href = "/app";
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     let ctx = gsap.context(() => {
       window.onmousemove = (e) => {
@@ -27,6 +64,64 @@ function Home() {
     }, ".gallery");
     return () => ctx.revert();
   }, []);
+
+  const Dialog = () => {
+    const menu = [
+      {
+        name: "Web3Auth",
+        icon: "/web3Auth.svg",
+        onClick: () => login(),
+      },
+      {
+        name: "hardware Wallet",
+        icon: "/wallet.png",
+        onClick: () => console.log("hardware Wallet"),
+      },
+    ];
+    return (
+      <div className="fixed h-screen w-screen top-0 left-0 bg-slate-700/20 backdrop-blur-[10px] flex items-center justify-center z-20">
+        <div className="bg-[#222222] h-[375px] w-[500px] rounded-[40px] p-10">
+          <div className="w-[100%] flex items-center justify-between">
+            <h1
+              className={`font-[ClearSans] font-semibold text-white text-2xl`}
+            >
+              Login Window
+            </h1>
+
+            {/* Close Button */}
+            <div
+              className="h-10 w-10 bg-[#404040] rounded-2xl flex items-center justify-center hover:bg-[#3b3b3b] transition-colors duration-300 hover:cursor-pointer"
+              onClick={() => dispatch(setDialogHandler(false))}
+            >
+              <Image src="/close.png" height={20} width={20} alt="Close" />
+            </div>
+          </div>
+          <div className="w-[100%] flex flex-col h-[300px] mt-5">
+            {menu.map((item, index) => (
+              <div
+                key={index}
+                className="w-[100%] h-[100px] mt-5 rounded-xl bg-[#404040] flex p-5 items-center hover:bg-[#3b3b3b] transition-colors duration-300 hover:cursor-pointer"
+                onClick={item.onClick}
+              >
+                <Image
+                  src={item.icon}
+                  height={20}
+                  width={50}
+                  alt="Icon"
+                  className="object-cover"
+                />
+                <h1
+                  className={`font-[ClearSans] font-semibold text-white text-xl ml-5`}
+                >
+                  {`Login using ${item.name}`}
+                </h1>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="bg-[#232429] ">
@@ -58,7 +153,10 @@ function Home() {
             plug your wallet and pay with additional features.
           </p>
           <div className="flex gap-6 items-center mt-12 z-10">
-            <div className="group text-xl font-normal gap-16 bg-[#ffffff] text-[#000000] font-[ClearSans] border-[1px] border-[#ffffff] p-4 px-6 justify-between rounded-2xl flex items-center hover:bg-transparent hover:text-[#ffffff] transition-colors duration-300 hover:cursor-pointer">
+            <div
+              className="group text-xl font-normal gap-16 bg-[#ffffff] text-[#000000] font-[ClearSans] border-[1px] border-[#ffffff] p-4 px-6 justify-between rounded-2xl flex items-center hover:bg-transparent hover:text-[#ffffff] transition-colors duration-300 hover:cursor-pointer"
+              onClick={() => dispatch(setDialogHandler(true))}
+            >
               <h1>Create Wallet</h1>
               <div className="bg-[#000000] w-[14px] h-[14px] arrowIcon group-hover:bg-[#ffffff] transition-colors duration-300"></div>
             </div>
@@ -117,6 +215,7 @@ function Home() {
           </div>
         </div>
       </div>
+      {dialogHandler && <Dialog />}
     </div>
   );
 }

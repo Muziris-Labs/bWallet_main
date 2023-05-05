@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import Logo from "./Logo";
+import { useDispatch } from "react-redux";
+import { setDialogHandler } from "@/redux/counterSlice";
 
 const buttonData = [
   {
@@ -18,7 +20,8 @@ const buttonData = [
   },
 ];
 
-function Navbar({handler}) {
+function Navbar({ handler }) {
+  const dispatch = useDispatch();
   return (
     <div className="w-screen fixed flex justify-between px-[5vw] py-[5vh] items-center">
       <Logo width={100} />
@@ -36,7 +39,12 @@ function Navbar({handler}) {
           ))}
         </ul>
       </div>
-      <div onClick={handler} className="group text-xl font-normal gap-16 bg-transparent text-[#ffffff] font-[ClearSans] border-[1px] border-[#ffffff] p-4 px-6 justify-between rounded-2xl flex items-center hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-300 hover:cursor-pointer">
+      <div
+        onClick={() => {
+          dispatch(setDialogHandler(true));
+        }}
+        className="group text-xl font-normal gap-16 bg-transparent text-[#ffffff] font-[ClearSans] border-[1px] border-[#ffffff] p-4 px-6 justify-between rounded-2xl flex items-center hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-300 hover:cursor-pointer"
+      >
         <h1>Launch App</h1>
         <div className="bg-[#ffffff] w-[14px] h-[14px] arrowIcon group-hover:bg-[#000000] transition-colors duration-300"></div>
       </div>
