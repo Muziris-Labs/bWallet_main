@@ -15,13 +15,13 @@ import {
 import { GaslessOnboarding } from "@gelatonetwork/gasless-onboarding";
 
 function Home() {
-
   const router = useRouter();
   const dialogHandler = useSelector((state) => state.counter.dialogHandler);
   const dispatch = useDispatch();
   const login = async () => {
     try {
       if (typeof window === "undefined") throw new Error("window is undefined");
+
       const gaslessWalletConfig = {
         apiKey: "YPSzgyWLyKrsrUWwbfXpxYluB9oRkVTxoSNOoSkQZio_",
       };
@@ -33,7 +33,7 @@ function Home() {
             "https://polygon-mumbai.g.alchemy.com/v2/RPFXITTSaBIEUgJ9xptrOwujTphQW-Yv",
         },
         openLogin: {
-          redirectUrl: "http://localhost:3000/app",
+          redirectUrl: `${window.location.origin}/app`,
         },
       };
       const gaslessOnboarding = new GaslessOnboarding(
@@ -146,7 +146,7 @@ function Home() {
   return (
     <div className="bg-[#232429] ">
       <div className="absolute h-screen w-screen gradientBg"></div>
-      <Navbar handler={()=>window.location.replace('/app')}/>
+      <Navbar handler={() => window.location.replace("/app")} />
       <div className="h-screen flex items-center min-w-screen lg:px-[5vw] pt-24 flex-col-reverse lg:flex-row z-10">
         <div className="lg:w-3/5 flex flex-col">
           <h1
