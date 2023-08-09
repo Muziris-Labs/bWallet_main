@@ -1,0 +1,14 @@
+import Navbar from "@components/Navbar";
+
+export default function DashboardLayout({children}){
+    return(
+        <html lang="en">
+        {/* <Navbar /> */}
+        <body>
+            {children}
+        </body>
+
+        </html>
+    )
+
+}

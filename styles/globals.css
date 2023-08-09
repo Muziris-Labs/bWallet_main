@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.cdnfonts.com/css/conthrax");
+@import url("//db.onlinewebfonts.com/c/38d41072aa88a50711d4d50dd0d50f6b?family=Neue+Machina");
+body {
+  background: #141414;
+  overflow-x: hidden;
+  font-family: "Conthrax", sans-serif;
+}
+
+
+
