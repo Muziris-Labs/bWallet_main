@@ -80,7 +80,6 @@ const DefaultBlackBtn = ({ label, style, onClick, image }) => {
 };
 
 
-
 const LaunchAppBtn = ({ isDefault, screen, style }) => {
   const handleClick = () => {
     window.open("https://tally.so/r/nPpvRQ", "_blank");
