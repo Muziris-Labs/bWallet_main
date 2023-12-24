@@ -8,8 +8,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { Button } from "@material-tailwind/react";
 
-import { useRouter } from "next/navigation";
-
 const DefaultButton = ({
   variant,
   label,
@@ -59,27 +57,22 @@ const DefaultWhiteButton = ({ label, style, onClick }) => {
 const DefaultBlackBtn = ({ label, style, onClick, image }) => {
   console.log("image", image);
   return (
-    <Button 
-      variant="filled" 
-      color="gray" 
-      className="w-[280px] flex flex-row h-10 mb-8 bg-gradient-to-b from-stone-900 to-neutral-900 rounded-lg shadow border border-gray-600 pl-12 items-center  "
+    <Button
+      variant="filled"
+      color="gray"
+      className="from-stone-900 to-neutral-900 mb-8 flex h-10 w-[280px] flex-row items-center rounded-lg border border-gray-600 bg-gradient-to-b pl-12 shadow  "
       onClick={onClick}
     >
-      
-      {image && <img src={image} className="w-6 h-6 " />}
-      <div className="justify-start items-center  inline-flex">
-        <div className="w-6 h-6 p-0.5 justify-center items-center flex">
-          <div className="w-5 h-5 relative flex-col justify-start items-start flex" />
+      {image && <img src={image} className="h-6 w-6 " />}
+      <div className="inline-flex items-center  justify-start">
+        <div className="flex h-6 w-6 items-center justify-center p-0.5">
+          <div className="relative flex h-5 w-5 flex-col items-start justify-start" />
         </div>
-        <div className="text-center text-white text-sm ">
-          {label}
-        </div>
+        <div className="text-center text-sm text-white ">{label}</div>
       </div>
     </Button>
   );
 };
-
-
 
 const LaunchAppBtn = ({ isDefault, screen, style }) => {
   const handleClick = () => {
@@ -131,62 +124,10 @@ const HardwareWalletBtn = () => {
   );
 };
 
-// const ConnectWalletBtn = () => {
-//   const activeWallet = useSelector((state) => state.modal.activeWallet);
-//   const dispatch = useDispatch();
-//   const handleClick = () => {
-//     connect({
-//       connector:
-//         connectors[
-//           activeWallet === "MetaMask"
-//             ? 0
-//             : activeWallet === "Coinbase Wallet"
-//             ? 1
-//             : 2
-//         ],
-//     });
-
-//     if (activeWallet === "WalletConnect") {
-//       dispatch(handleLoginModal());
-//     }
-//   };
-//   const { connect, connectors } = useConnect();
-
-//   return (
-//     <DefaultButton
-//       variant={"filled"}
-//       color="gray"
-//       label="Connect Wallet"
-//       style="flex bg-gradient-primary w-full justify-center text-sm sm:text-sm md:text-base"
-//       onClick={handleClick}
-//     />
-//   );
-// };
-
-// const SignWalletBtn = () => {
-//   const { data, signMessage } = useSignMessage();
-//   const dispatch = useDispatch();
-//   const handleClick = () => {
-//     signMessage({ message: process.env.NEXT_PUBLIC_AUTH_MESSAGE });
-//   };
-
-//   useEffect(() => {
-//     if (data) {
-//       dispatch(handleLoginModal());
-//       dispatch(setSignature(data));
-//       dispatch(handleRoleModal());
-//     }
-//   }, [data, dispatch]);
-
-//   return (
-//     <DefaultButton
-//       variant={"filled"}
-//       color="gray"
-//       label="Sign In"
-//       style="flex bg-gradient-primary w-full justify-center text-sm sm:text-sm md:text-base"
-//       onClick={handleClick}
-//     />
-//   );
-// };
-
-export { LaunchAppBtn, CreateWalletBtn, HardwareWalletBtn, DefaultButton, DefaultBlackBtn };
+export {
+  LaunchAppBtn,
+  CreateWalletBtn,
+  HardwareWalletBtn,
+  DefaultButton,
+  DefaultBlackBtn,
+};

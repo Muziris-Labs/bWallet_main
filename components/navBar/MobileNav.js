@@ -1,3 +1,5 @@
+"use client";
+
 import { Collapse } from "@material-tailwind/react";
 
 import NavList from "./NavList";

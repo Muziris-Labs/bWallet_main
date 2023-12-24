@@ -31,9 +31,10 @@ module.exports = withMT({
 
       colors: {
         "primary-black": "#141414",
-        "tlbank-black": "#212121",
-        "tlbank-black-2": "#161616",
         primary: "#D02129",
+        "background-black": "#212121",
+        "background-primary": "#161616",
+        pink: "#FB96FF",
       },
     },
   },
