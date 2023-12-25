@@ -2,8 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 
+import setupReducer from "./slice/setupSlice.js";
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    setup: setupReducer,
+  },
 
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
