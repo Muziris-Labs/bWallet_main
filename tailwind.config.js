@@ -20,6 +20,7 @@ module.exports = withMT({
           "radial-gradient(50% 180.65% at 50% 50%, #FAFAFA 0%, #929292 100%)",
         "wallet-gradient":
           "radial-gradient(100% 100% at 0% 50%, #5D9DF6 0%, #006FFF 100%)",
+        "text-gradient": "linear-gradient(90deg, #E51E34 0%, #EA13F2 100%)",
       },
 
       fontFamily: {

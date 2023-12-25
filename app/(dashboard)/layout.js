@@ -1,5 +1,5 @@
 import Sidebar from "@/components/sidebar/Sidebar";
-import PageHeader from "@/components/ui/PageHeader";
+import PageHeader from "@/components/pageHeader/PageHeader";
 
 export const metadata = {
   title: "B-Wallet",
@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
     <div className="flex gap-5">
       <Sidebar />
 
-      <main className="space-y-5">
+      <main className="w-full space-y-5">
         <PageHeader />
         {children}
       </main>
