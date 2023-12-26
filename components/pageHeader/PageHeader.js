@@ -7,9 +7,7 @@ const PageHeader = () => {
     <div className="pt-2 backdrop-blur-md">
       <section className="flex w-full items-center justify-between rounded-xl bg-background-black px-8 py-3">
         <PageHeading />
-
         <PageSearch />
-
         <Profile />
       </section>
     </div>
