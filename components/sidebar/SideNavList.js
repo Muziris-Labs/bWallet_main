@@ -12,7 +12,6 @@ import {
 
 import SideNavItem from "./SideNavItem";
 import SideNavAccordion from "./SideNavAccordion";
-import Image from "next/image";
 
 const SideNavList = ({ open, handleOpen }) => {
   const walletSubItems = [
@@ -41,9 +40,9 @@ const SideNavList = ({ open, handleOpen }) => {
         >
           <path
             d="M17 5.12501C19.1213 6.67054 20.5 9.17407 20.5 11.9996C20.5 16.694 16.6944 20.4996 12 20.4996H11.5M7 18.8742C4.87867 17.3287 3.5 14.8251 3.5 11.9996C3.5 7.30519 7.30558 3.49961 12 3.49961H12.5M13 22.3996L11 20.3996L13 18.3996M11 5.59961L13 3.59961L11 1.59961"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -71,7 +70,7 @@ const SideNavList = ({ open, handleOpen }) => {
         subLabel={walletSubItems}
       />
 
-      <hr className="my-2 border-blue-gray-50" />
+      <hr className="my-2 border-gray-500" />
 
       <SideNavAccordion
         open={open}
