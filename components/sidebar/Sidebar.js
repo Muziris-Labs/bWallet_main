@@ -1,13 +1,19 @@
 "use client";
 
 import { Card } from "@material-tailwind/react";
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
+import {
+  DocumentDuplicateIcon,
+  QrCodeIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/react/24/outline";
 
 import { useState } from "react";
 
 import Logo from "../Logo";
-import SideNavList from "./SideNavList";
+import SidebarBtn from "./SidebarBtn";
 import SideNavItem from "./SideNavItem";
+import SideNavList from "./SideNavList";
+import SidebarProfile from "./SidebarProfile";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(0);
@@ -17,12 +23,32 @@ const Sidebar = () => {
   };
 
   return (
-    <Card className="flex h-screen w-full max-w-[20rem] flex-col justify-between rounded-none rounded-r-xl bg-background-black px-5 py-4">
+    <Card className="h-screen w-full min-w-fit max-w-[20rem] space-y-3 overflow-y-auto rounded-none rounded-r-xl bg-background-black px-5 py-4 hide-scrollbar">
       <Logo />
 
-      <SideNavList open={open} handleOpen={handleOpen} />
+      <section className="flex h-full flex-col justify-between gap-12">
+        <div className="space-y-3">
+          <SidebarProfile />
 
-      <SideNavItem label="Transactions" icon={<QuestionMarkCircleIcon />} />
+          <div className="flex w-full justify-between">
+            <SidebarBtn
+              label="Open QR"
+              icon={<QrCodeIcon className="h-6 w-6 gradient-text" />}
+            />
+
+            <SidebarBtn
+              label="Copy Pubkey"
+              icon={<DocumentDuplicateIcon className="h-6 w-6 gradient-text" />}
+            />
+          </div>
+
+          <hr className="my-2 border-gray-500" />
+        </div>
+
+        <SideNavList open={open} handleOpen={handleOpen} />
+
+        <SideNavItem label="Need Help?" icon={<QuestionMarkCircleIcon />} />
+      </section>
     </Card>
   );
 };

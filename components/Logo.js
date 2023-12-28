@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Logo = ({ logoSize = 20, textSize = "text-xl" }) => {
   return (
-    <Link className="prevent-select flex items-center gap-2" href="/">
+    <Link className="prevent-select flex w-fit items-center gap-2" href="/">
       <div className="flex items-center justify-center rounded-lg bg-black">
         <Image
           src="/logo.svg"

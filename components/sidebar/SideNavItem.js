@@ -11,7 +11,7 @@ const SideNavItem = ({ label, icon, fill }) => {
 
   return (
     <ListItem
-      className="sideNavItem text-white hover:bg-black"
+      className="sideNavItem text-white hover:bg-black focus:bg-black active:bg-black"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -20,7 +20,7 @@ const SideNavItem = ({ label, icon, fill }) => {
       </ListItemPrefix>
 
       <p
-        className={`font-grotesque text-xl text-white ${
+        className={`prevent-select font-grotesque text-xl text-white ${
           isHovered ? "font-bold gradient-text" : ""
         }`}
       >

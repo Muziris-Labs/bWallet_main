@@ -102,6 +102,12 @@ body {
   content: "";
 }
 
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
