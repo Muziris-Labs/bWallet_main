@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
     <div className="flex gap-5">
       <Sidebar />
 
-      <main className="w-full space-y-5">
+      <main className="w-full space-y-5 pr-5">
         <PageHeader />
         {children}
       </main>
