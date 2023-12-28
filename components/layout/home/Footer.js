@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import Logo from "@/components/Logo";
 import Link from "next/link";

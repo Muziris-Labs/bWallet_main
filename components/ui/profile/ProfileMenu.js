@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Menu, MenuHandler } from "@material-tailwind/react";
 
