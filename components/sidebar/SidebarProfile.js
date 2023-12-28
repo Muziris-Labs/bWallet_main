@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Pubkey from "../ui/Pubkey";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 

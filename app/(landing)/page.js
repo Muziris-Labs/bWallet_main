@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import Header from "@/components/layout/home/header/Header";
 import Card from "@/components/layout/home/card/Card";
