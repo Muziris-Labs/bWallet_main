@@ -13,7 +13,7 @@ const TokenTabItem = ({ label, value }) => {
       </div>
 
       <div className="text-center text-white">
-        <p className="font-grotesque text-xl font-bold">{label}</p>
+        <p className="font-grotesque text-xl font-bold uppercase">{label}</p>
         <span className="text-[10px]">1000</span>
       </div>
     </section>

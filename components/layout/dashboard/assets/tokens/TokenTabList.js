@@ -1,11 +1,11 @@
 "use client";
 
 import { Tab, TabsHeader } from "@material-tailwind/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 import { useRef } from "react";
 
 import TokenTabItem from "./TokenTabItem";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const TokenTabList = ({ activeTab, setActiveTab }) => {
   const tabsContentRef = useRef(null);
@@ -13,7 +13,7 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
   const data = [
     {
       label: "BANK",
-      value: "bankless",
+      value: "bank",
     },
     {
       label: "ETH",
@@ -30,46 +30,6 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
     {
       label: "Base",
       value: "base",
-    },
-    {
-      label: "BANK",
-      value: "bankless1",
-    },
-    {
-      label: "ETH",
-      value: "eth1",
-    },
-    {
-      label: "USDC",
-      value: "usdc1",
-    },
-    {
-      label: "USDT",
-      value: "usdt1",
-    },
-    {
-      label: "Base",
-      value: "base1",
-    },
-    {
-      label: "BANK",
-      value: "bankless2",
-    },
-    {
-      label: "ETH",
-      value: "eth2",
-    },
-    {
-      label: "USDC",
-      value: "usdc2",
-    },
-    {
-      label: "USDT",
-      value: "usdt2",
-    },
-    {
-      label: "Base",
-      value: "base2",
     },
   ];
 
@@ -102,11 +62,11 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
   return (
     <section className="relative flex gap-6 overflow-hidden">
       <button onClick={handlePrev} className="arrow-button">
-        <ArrowLeftIcon className="h-8 w-8" />
+        <ChevronLeftIcon className="h-10 w-10" />
       </button>
 
       <TabsHeader
-        className=" w-[calc(100vw-448px)] rounded-none border-b border-gray-800 bg-transparent p-0"
+        className=" w-[calc(100vw-480px)] rounded-none border-b border-gray-800 bg-transparent p-0"
         indicatorProps={{
           className: `bg-transparent border-b-2 border-red-400 shadow-none rounded-none`,
         }}
@@ -129,7 +89,7 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
       </TabsHeader>
 
       <button onClick={handleNext} className="arrow-button">
-        <ArrowRightIcon className="h-8 w-8" />
+        <ChevronRightIcon className="h-10 w-10" />
       </button>
     </section>
   );

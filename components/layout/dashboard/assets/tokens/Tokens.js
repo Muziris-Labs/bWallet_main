@@ -7,7 +7,7 @@ import TokenTabList from "./TokenTabList";
 import TokenDetails from "./TokenDetails";
 
 const Tokens = () => {
-  const [activeTab, setActiveTab] = useState("bankless");
+  const [activeTab, setActiveTab] = useState("bank");
 
   return (
     <Tabs value={activeTab}>
