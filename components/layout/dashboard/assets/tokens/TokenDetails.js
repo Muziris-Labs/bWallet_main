@@ -2,34 +2,48 @@ import { TabPanel, TabsBody } from "@material-tailwind/react";
 
 import TokenGraph from "./TokenGraph";
 import UserTokenDetails from "./UserTokenDetails";
-import TokenDeatilsHeader from "./TokenGraphHeader";
 
-const TokenDetails = () => {
+const TokenDetails = ({ tokenData, isLoading }) => {
   const data = [
     {
-      value: "bank",
+      name: "bank",
+      tokenName: "Bankless",
     },
     {
-      value: "eth",
+      name: "eth",
+      tokenName: "Ethereum",
     },
     {
-      value: "usdc",
+      name: "usdc",
+      tokenName: "USD Coin",
     },
     {
-      value: "usdt",
+      name: "usdt",
+      tokenName: "Tether",
     },
     {
-      value: "base",
+      name: "base",
+      tokenName: "Base",
     },
   ];
 
   return (
     <TabsBody>
-      {data.map(({ value }) => (
-        <TabPanel key={value} value={value}>
+      {data.map(({ name, tokenName }) => (
+        <TabPanel key={name} value={name}>
           <div className="flex gap-5">
-            <TokenGraph />
-            <UserTokenDetails tokenName={value} />
+            <TokenGraph
+              name={name}
+              tokenName={tokenName}
+              tokenData={tokenData}
+              isLoading={isLoading}
+            />
+
+            <UserTokenDetails
+              tokenName={name}
+              isLoading={isLoading}
+              tokenData={tokenData}
+            />
           </div>
         </TabPanel>
       ))}
