@@ -23,33 +23,37 @@ const Sidebar = () => {
   };
 
   return (
-    <Card className="h-screen w-full min-w-fit max-w-[20rem] space-y-3 overflow-y-auto rounded-none rounded-r-xl bg-background-black px-5 py-4 hide-scrollbar">
-      <Logo />
+    <div className="sticky top-0 h-screen">
+      <Card className="h-screen w-full min-w-fit max-w-[20rem] space-y-3 overflow-y-auto rounded-none rounded-r-xl bg-background-black px-5 py-4 hide-scrollbar">
+        <Logo />
 
-      <section className="flex h-full flex-col justify-between gap-12">
-        <div className="space-y-3">
-          <SidebarProfile />
+        <section className="flex h-full flex-col justify-between gap-12">
+          <div className="space-y-3">
+            <SidebarProfile />
 
-          <div className="flex w-full justify-between">
-            <SidebarBtn
-              label="Open QR"
-              icon={<QrCodeIcon className="h-6 w-6 gradient-text" />}
-            />
+            <div className="flex w-full justify-between">
+              <SidebarBtn
+                label="Open QR"
+                icon={<QrCodeIcon className="h-6 w-6 gradient-text" />}
+              />
 
-            <SidebarBtn
-              label="Copy Pubkey"
-              icon={<DocumentDuplicateIcon className="h-6 w-6 gradient-text" />}
-            />
+              <SidebarBtn
+                label="Copy Pubkey"
+                icon={
+                  <DocumentDuplicateIcon className="h-6 w-6 gradient-text" />
+                }
+              />
+            </div>
+
+            <hr className="my-2 border-gray-500" />
           </div>
 
-          <hr className="my-2 border-gray-500" />
-        </div>
+          <SideNavList open={open} handleOpen={handleOpen} />
 
-        <SideNavList open={open} handleOpen={handleOpen} />
-
-        <SideNavItem label="Need Help?" icon={<QuestionMarkCircleIcon />} />
-      </section>
-    </Card>
+          <SideNavItem label="Need Help?" icon={<QuestionMarkCircleIcon />} />
+        </section>
+      </Card>
+    </div>
   );
 };
 

@@ -12,24 +12,19 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
 
   const data = [
     {
-      label: "BANK",
-      value: "bank",
+      name: "bank",
     },
     {
-      label: "ETH",
-      value: "eth",
+      name: "eth",
     },
     {
-      label: "USDC",
-      value: "usdc",
+      name: "usdc",
     },
     {
-      label: "USDT",
-      value: "usdt",
+      name: "usdt",
     },
     {
-      label: "Base",
-      value: "base",
+      name: "base",
     },
   ];
 
@@ -60,7 +55,7 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
   };
 
   return (
-    <section className="relative flex gap-6 overflow-hidden">
+    <section className="relative mb-12 flex gap-6 overflow-hidden">
       <button onClick={handlePrev} className="arrow-button">
         <ChevronLeftIcon className="h-10 w-10" />
       </button>
@@ -75,14 +70,14 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
           ref={tabsContentRef}
           className="flex w-full overflow-x-auto hide-scrollbar"
         >
-          {data.map(({ label, value }) => (
+          {data.map(({ name }) => (
             <Tab
-              key={value}
-              value={value}
-              onClick={() => setActiveTab(value)}
-              className={activeTab === value ? "text-gray-900" : ""}
+              key={name}
+              value={name}
+              onClick={() => setActiveTab(name)}
+              className={activeTab === name ? "text-gray-900" : ""}
             >
-              <TokenTabItem label={label} value={value} />
+              <TokenTabItem name={name} />
             </Tab>
           ))}
         </section>
