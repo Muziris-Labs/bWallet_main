@@ -55,7 +55,7 @@ const TokenTabList = ({ activeTab, setActiveTab }) => {
   };
 
   return (
-    <section className="relative flex gap-6 overflow-hidden">
+    <section className="relative mb-12 flex gap-6 overflow-hidden">
       <button onClick={handlePrev} className="arrow-button">
         <ChevronLeftIcon className="h-10 w-10" />
       </button>

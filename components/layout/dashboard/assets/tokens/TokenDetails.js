@@ -1,6 +1,6 @@
 import { TabPanel, TabsBody } from "@material-tailwind/react";
 
-import TokenGraph from "./TokenGraph";
+import TokenGraph from "./tokenGraph/TokenGraph";
 import UserTokenDetails from "./UserTokenDetails";
 
 const TokenDetails = ({ tokenData, isLoading }) => {
@@ -28,9 +28,9 @@ const TokenDetails = ({ tokenData, isLoading }) => {
   ];
 
   return (
-    <TabsBody>
+    <TabsBody className="mb-4">
       {data.map(({ name, tokenName }) => (
-        <TabPanel key={name} value={name}>
+        <TabPanel key={name} value={name} className="p-0">
           <div className="flex gap-5">
             <TokenGraph
               name={name}

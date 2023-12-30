@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex gap-5">
+    <div className="relative flex gap-5">
       <Sidebar />
 
-      <main className="w-full space-y-5 pr-5">
+      <main className="relative w-full space-y-5 pr-5">
         <PageHeader />
         {children}
       </main>
