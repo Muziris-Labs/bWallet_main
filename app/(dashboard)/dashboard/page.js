@@ -1,6 +1,6 @@
 import Tokens from "@/components/layout/dashboard/home/tokens/Tokens";
+import Actions from "@/components/layout/dashboard/home/actions/Actions";
 import Portfolio from "@/components/layout/dashboard/home/main/Portfolio";
-import ActionTab from "@/components/layout/dashboard/home/actions/ActionTab";
 import Transactions from "@/components/layout/dashboard/home/transactions/Transactions";
 
 export const metadata = {
@@ -17,7 +17,7 @@ export default function Dashboard() {
       </section>
 
       <aside className="w-full max-w-sm">
-        <ActionTab />
+        <Actions />
         <Transactions />
       </aside>
     </article>
