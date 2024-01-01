@@ -50,7 +50,11 @@ const Sidebar = () => {
 
           <SideNavList open={open} handleOpen={handleOpen} />
 
-          <SideNavItem label="Need Help?" icon={<QuestionMarkCircleIcon />} />
+          <SideNavItem
+            label="Need Help?"
+            href="/help"
+            icon={<QuestionMarkCircleIcon />}
+          />
         </section>
       </Card>
     </div>

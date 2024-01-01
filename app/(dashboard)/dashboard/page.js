@@ -1,7 +1,7 @@
-import ActionTab from "@/components/layout/dashboard/home/actions/ActionTab";
-import Transactions from "../transactions/page";
-import Portfolio from "@/components/layout/dashboard/home/main/Portfolio";
 import Tokens from "@/components/layout/dashboard/home/tokens/Tokens";
+import Portfolio from "@/components/layout/dashboard/home/main/Portfolio";
+import ActionTab from "@/components/layout/dashboard/home/actions/ActionTab";
+import Transactions from "@/components/layout/dashboard/home/transactions/Transactions";
 
 export const metadata = {
   title: "B-Wallet | Dashboard",
@@ -16,7 +16,7 @@ export default function Dashboard() {
         <Tokens />
       </section>
 
-      <aside>
+      <aside className="w-full max-w-sm">
         <ActionTab />
         <Transactions />
       </aside>
