@@ -66,6 +66,7 @@ const SideNavAccordion = ({
             <SideNavItem
               key={index}
               label={item.label}
+              href={item.href}
               icon={item.icon}
               fill={item.fill}
             />
