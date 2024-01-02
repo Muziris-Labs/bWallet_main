@@ -16,7 +16,7 @@ export default function Dashboard() {
         <Tokens />
       </section>
 
-      <aside className="w-full max-w-sm">
+      <aside className="w-full max-w-sm space-y-6">
         <Actions />
         <Transactions />
       </aside>

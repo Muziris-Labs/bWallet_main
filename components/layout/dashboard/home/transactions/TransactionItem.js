@@ -13,7 +13,7 @@ const TransactionItem = ({ transaction, index }) => {
         <div
           className={`prevent-select flex items-center justify-center rounded-lg p-3 ${
             index % 2 !== 0 ? "bg-black" : "bg-background-primary"
-          } hover:bg-gray-900`}
+          }`}
         >
           <Image
             src={`/images/dashboard/home/${transaction.type.toLowerCase()}.svg`}
@@ -37,12 +37,13 @@ const TransactionItem = ({ transaction, index }) => {
             transaction.type === "Send" ? "text-red-600" : "text-green-500"
           }`}
         >
-          {transaction.amount}
+          <span className="cursor-text">{transaction.amount}</span>
 
           <span className="prevent-select">{" " + transaction.currency}</span>
         </p>
         <p className="text-xs font-medium text-gray-400">
-          <span className="prevent-select">$</span>312
+          <span className="prevent-select">$</span>
+          <span className="cursor-text">321</span>
         </p>
       </div>
     </ListItem>
