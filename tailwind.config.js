@@ -14,6 +14,8 @@ module.exports = withMT({
     extend: {
       backgroundImage: {
         "gradient-primary": "linear-gradient(90deg, #D02129 0%, #750069 100%)",
+        "gradient-primary-light":
+          "linear-gradient(103deg, #E51E2A 0%, #EA13F2 100.21%)",
         "gradient-primary/20":
           "linear-gradient(90deg, #cf202933 0%, #75006abe 100%)",
         "tlBank-gradient-primary":
