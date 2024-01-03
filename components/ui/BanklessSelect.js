@@ -4,9 +4,9 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 import { useState } from "react";
 
-const BanklessSelect = ({ options }) => {
+const BanklessSelect = ({ options, id, defaultOption, label }) => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(defaultOption);
 
   const handleOptionClick = (option) => {
     setSelected(option);
@@ -14,16 +14,16 @@ const BanklessSelect = ({ options }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="prevent-select relative w-full">
       <label
-        for="token"
-        className="mb-2 block text-sm font-medium text-gray-400"
+        htmlFor={id}
+        className="mb-2 block text-sm font-medium text-gray-300"
       >
-        Token
+        {label}
       </label>
 
       <button
-        id="token"
+        id={id}
         onClick={() => setOpen((prev) => !prev)}
         className="relative flex w-full justify-between rounded-lg border border-gray-700 bg-black/80 p-3 text-left text-sm font-bold text-gray-400 outline-none placeholder:font-bold placeholder:text-gray-600 focus:border-gray-300"
       >
@@ -35,12 +35,12 @@ const BanklessSelect = ({ options }) => {
       </button>
 
       {open && (
-        <ul className="absolute mt-2 w-full overflow-hidden rounded-lg border border-gray-700 bg-black/80 text-gray-400">
+        <ul className="absolute z-10 mt-2 w-full overflow-hidden rounded-lg border border-gray-700 bg-black/80 text-gray-400">
           {options.map((option, index) => (
             <li
               key={index}
               onClick={() => handleOptionClick(option)}
-              className="cursor-pointer p-3 hover:bg-gray-700"
+              className="cursor-pointer px-3 py-2 text-sm hover:bg-gray-700"
             >
               {option}
             </li>

@@ -10,7 +10,7 @@ const ActionTabs = () => {
   const [activeTab, setActiveTab] = useState("transfer");
 
   return (
-    <Tabs value={activeTab}>
+    <Tabs value={activeTab} className="overflow-visible">
       <ActionHeader activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <ActionBody />
