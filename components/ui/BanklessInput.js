@@ -1,19 +1,21 @@
 "use client";
 
-import { Input } from "@material-tailwind/react";
+const BanklessInput = ({ label, id, type, placeholder }) => {
+  const [input, setInput] = [""];
 
-const BanklessInput = () => {
   return (
     <div className="space-y-2">
-      <label htmlFor="token" className="text-sm text-gray-300">
-        Token
+      <label htmlFor={id} className="text-sm text-gray-300">
+        {label}
       </label>
 
       <input
-        id="token"
-        type="text"
-        placeholder="Select Token"
-        className="w-full rounded-lg border border-gray-600 bg-transparent p-3 text-sm text-white outline-none placeholder:font-bold placeholder:text-gray-600 focus:border-gray-300"
+        id={id}
+        type={type}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder={placeholder}
+        className="w-full rounded-lg border border-gray-700 bg-black/80 p-3 text-sm text-white outline-none placeholder:font-bold placeholder:text-gray-600 focus:border-gray-300"
       />
     </div>
   );
