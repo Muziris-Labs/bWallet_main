@@ -2,22 +2,22 @@
 
 import { useEffect, useState } from "react";
 
+import CopyButton from "@/components/ui/CopyButton";
 import BanklessInput from "@/components/ui/BanklessInput";
 import BanklessSelect from "@/components/ui/BanklessSelect";
-import CopyButton from "@/components/ui/CopyButton";
 
 const DepositBody = () => {
-  const [bic, setBic] = useState(null);
-  const [beneficiary, setBeneficiary] = useState(null);
-  const [iban, setIban] = useState(null);
-  const [address, setAddress] = useState(null);
-
-  const [selectedToken, setSelectedToken] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const [bic, setBic] = useState(null);
+  const [iban, setIban] = useState(null);
+  const [beneficiary, setBeneficiary] = useState(null);
+
+  const [address, setAddress] = useState(null);
+  const [selectedToken, setSelectedToken] = useState(null);
 
   const handleTokenSelect = (option) => {
     setSelectedToken(option);
-    console.log("Selected option is: ", selectedToken);
   };
 
   useEffect(() => {
@@ -58,7 +58,13 @@ const DepositBody = () => {
             }
             id="recipient"
             type="text"
-            placeholder={loading ? "Loading..." : address}
+            placeholder={
+              loading
+                ? "Loading..."
+                : address
+                ? address.slice(0, 35) + "..."
+                : "No address found"
+            }
             readOnly={true}
             icon={
               <CopyButton
@@ -85,7 +91,9 @@ const DepositBody = () => {
           label="Beneficiary"
           id="recipient"
           type="text"
-          placeholder={loading ? "Loading..." : beneficiary}
+          placeholder={
+            loading ? "Loading..." : beneficiary || "No beneficiary found"
+          }
           readOnly={true}
           icon={
             <CopyButton
@@ -100,7 +108,7 @@ const DepositBody = () => {
           label="IBAN"
           id="recipient"
           type="text"
-          placeholder={loading ? "Loading..." : iban}
+          placeholder={loading ? "Loading..." : iban || "No IBAN found"}
           readOnly={true}
           icon={
             <CopyButton
@@ -115,7 +123,7 @@ const DepositBody = () => {
           label="BIC"
           id="recipient"
           type="text"
-          placeholder={loading ? "Loading..." : bic}
+          placeholder={loading ? "Loading..." : bic || "No BIC found"}
           readOnly={true}
           icon={
             <CopyButton

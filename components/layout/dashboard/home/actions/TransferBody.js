@@ -1,13 +1,30 @@
+"use client";
+
 import {
   ArrowsRightLeftIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
+
+import { useState } from "react";
 
 import BanklessInput from "@/components/ui/BanklessInput";
 import BanklessSelect from "@/components/ui/BanklessSelect";
 import { DefaultButton } from "@/components/ui/ClientButtons";
 
 const TransferBody = () => {
+  const [fiatValue, setFiatValue] = useState(null);
+  const [selectedToken, setSelectedToken] = useState(null);
+
+  const handleTokenSelect = (option) => {
+    setSelectedToken(option);
+    console.log("Seleted option is: ", selectedToken);
+  };
+
+  const handleFiatSelect = (option) => {
+    setFiatValue(option);
+    console.log("Selected option is: ", fiatValue);
+  };
+
   return (
     <section className="space-y-6">
       <BanklessSelect
@@ -15,6 +32,7 @@ const TransferBody = () => {
         id="token"
         label="Select Token"
         defaultOption="Select Your Token"
+        onOptionSelect={handleTokenSelect}
       />
 
       <BanklessInput
@@ -57,6 +75,7 @@ const TransferBody = () => {
           id="fiat"
           label="Fiat Value"
           defaultOption="USD"
+          onOptionSelect={handleFiatSelect}
         />
       </div>
 

@@ -17,8 +17,8 @@ const BanklessSelect = ({
 
   const handleOptionClick = (option) => {
     setSelected(option);
-    setOpen(false);
     onOptionSelect(option);
+    setOpen(false);
   };
 
   return (
