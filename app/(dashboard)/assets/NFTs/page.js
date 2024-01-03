@@ -8,9 +8,13 @@ export const metadata = {
 
 export default function NFTs() {
   return (
-    <section className="flex gap-5">
-      <NFTsList />
-      <NFTsSelected />
+    <section className="flex flex-row justify-around w-[100%] ">
+      <div className="w-[65%] ">
+        <NFTsList />
+      </div>
+      <div className="w-[30%]">
+        <NFTsSelected />
+      </div>
     </section>
   );
 }
