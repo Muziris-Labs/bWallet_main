@@ -4,13 +4,21 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 import { useState } from "react";
 
-const BanklessSelect = ({ options, id, defaultOption, label }) => {
+const BanklessSelect = ({
+  options,
+  id,
+  defaultOption,
+  label,
+  onOptionSelect,
+  disabled = false,
+}) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(defaultOption);
 
   const handleOptionClick = (option) => {
     setSelected(option);
     setOpen(false);
+    onOptionSelect(option);
   };
 
   return (
@@ -24,8 +32,11 @@ const BanklessSelect = ({ options, id, defaultOption, label }) => {
 
       <button
         id={id}
+        disabled={disabled}
         onClick={() => setOpen((prev) => !prev)}
-        className="relative flex w-full justify-between rounded-lg border border-gray-700 bg-black/80 p-3 text-left text-sm font-bold text-gray-400 outline-none placeholder:font-bold placeholder:text-gray-600 focus:border-gray-300"
+        className={`relative flex w-full justify-between rounded-lg border border-gray-700 bg-black/80 p-3 text-left text-sm font-bold text-gray-400 outline-none placeholder:text-gray-600 focus:border-gray-300 ${
+          disabled && "cursor-not-allowed"
+        }`}
       >
         {selected}
 
