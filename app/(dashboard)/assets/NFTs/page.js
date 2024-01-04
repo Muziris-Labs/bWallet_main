@@ -6,13 +6,14 @@ export const metadata = {
   description: "By Bankless DAO",
 };
 
+
 export default function NFTs() {
   return (
-    <section className="flex flex-row justify-around w-[100%] ">
-      <div className="w-[65%] ">
+    <section className="grid grid-cols-5 gap-4 ">
+      <div className="col-span-3">
         <NFTsList />
       </div>
-      <div className="w-[30%]">
+      <div className="col-span-2">
         <NFTsSelected />
       </div>
     </section>

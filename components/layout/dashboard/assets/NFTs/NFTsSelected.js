@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const NFTsSelected = () => {
   return (
-    <div className="flex flex-col rounded-lg items-center px-10 py-5 bg-background-black h-fit justify-between">
+    <div className="flex flex-col rounded-lg fixed items-center px-10 py-5 bg-background-black h-fit justify-between">
       <div className="flex flex-col items-center mb-24">
         <Image
           src="/images/nfts/nftImg1.svg"
