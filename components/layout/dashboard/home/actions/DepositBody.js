@@ -21,19 +21,21 @@ const DepositBody = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
-
     if (selectedToken) {
       setAddress("0xAl13FmcAa9d2f2a9c0f1f5d7B4fC5B4fC5B4fC5B");
+    }
+  }, [selectedToken]);
+
+  useEffect(() => {
+    setLoading(true);
+
+    setTimeout(() => {
       setBic("JKET20201555");
       setBeneficiary("NooberBoy");
       setIban("GB33 BUKB 2020 1555 555 555");
-    }
-
-    setTimeout(() => {
       setLoading(false);
     }, 1000);
-  }, [selectedToken]);
+  }, []);
 
   return (
     <section className="space-y-6">
@@ -44,26 +46,21 @@ const DepositBody = () => {
           label="Select Token"
           defaultOption="Select Your Token"
           onOptionSelect={handleTokenSelect}
-          disabled={loading}
         />
 
         <div className="space-y-2">
           <BanklessInput
             label={
-              (loading
-                ? "Loading..."
-                : selectedToken
-                ? selectedToken.toUpperCase()
-                : "No") + " Address"
+              (selectedToken ? selectedToken.toUpperCase() : "No") + " Address"
             }
             id="recipient"
             type="text"
             placeholder={
-              loading
-                ? "Loading..."
-                : address
-                ? address.slice(0, 35) + "..."
-                : "No address found"
+              selectedToken
+                ? address
+                  ? address.slice(0, 35) + "..."
+                  : "Loading..."
+                : "Select a token"
             }
             readOnly={true}
             icon={
@@ -91,9 +88,7 @@ const DepositBody = () => {
           label="Beneficiary"
           id="recipient"
           type="text"
-          placeholder={
-            loading ? "Loading..." : beneficiary || "No beneficiary found"
-          }
+          placeholder={beneficiary || "No beneficiary found"}
           readOnly={true}
           icon={
             <CopyButton
@@ -108,7 +103,7 @@ const DepositBody = () => {
           label="IBAN"
           id="recipient"
           type="text"
-          placeholder={loading ? "Loading..." : iban || "No IBAN found"}
+          placeholder={iban || "No IBAN found"}
           readOnly={true}
           icon={
             <CopyButton
@@ -123,7 +118,7 @@ const DepositBody = () => {
           label="BIC"
           id="recipient"
           type="text"
-          placeholder={loading ? "Loading..." : bic || "No BIC found"}
+          placeholder={bic || "No BIC found"}
           readOnly={true}
           icon={
             <CopyButton

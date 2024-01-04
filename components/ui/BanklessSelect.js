@@ -2,7 +2,7 @@
 
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const BanklessSelect = ({
   options,
@@ -14,6 +14,7 @@ const BanklessSelect = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(defaultOption);
+  const ref = useRef(null);
 
   const handleOptionClick = (option) => {
     setSelected(option);
@@ -21,8 +22,21 @@ const BanklessSelect = ({
     setOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="prevent-select relative w-full">
+    <div ref={ref} className="prevent-select relative w-full">
       <label
         htmlFor={id}
         className="mb-2 block text-sm font-medium text-gray-300"
