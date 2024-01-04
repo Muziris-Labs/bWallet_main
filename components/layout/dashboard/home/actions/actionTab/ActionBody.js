@@ -24,9 +24,9 @@ const ActionBody = () => {
   ];
 
   return (
-    <TabsBody>
+    <TabsBody className="mt-6 overflow-visible">
       {data.map(({ value, body }) => (
-        <TabPanel key={value} value={value}>
+        <TabPanel className="p-0" key={value} value={value}>
           {body}
         </TabPanel>
       ))}
