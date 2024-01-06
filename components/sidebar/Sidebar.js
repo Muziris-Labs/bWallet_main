@@ -27,7 +27,7 @@ const Sidebar = () => {
       <Card className="h-screen w-full min-w-fit max-w-[20rem] space-y-3 overflow-y-auto rounded-none rounded-r-xl bg-background-black px-5 py-4 hide-scrollbar">
         <Logo />
 
-        <section className="flex h-full flex-col justify-between gap-12">
+        <section className="flex h-full flex-col justify-between gap-8">
           <div className="space-y-3">
             <SidebarProfile />
 
