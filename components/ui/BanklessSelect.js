@@ -5,20 +5,18 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useEffect, useRef, useState } from "react";
 
 const BanklessSelect = ({
-  options,
   id,
-  defaultOption,
   label,
-  onOptionSelect,
+  options,
+  selected,
+  setSelected,
   disabled = false,
 }) => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(defaultOption);
   const ref = useRef(null);
 
   const handleOptionClick = (option) => {
     setSelected(option);
-    onOptionSelect(option);
     setOpen(false);
   };
 

@@ -1,40 +1,26 @@
 "use client";
 
+import { Button } from "@material-tailwind/react";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
+
+import { useState } from "react";
+
+import TokenItems from "@/components/ui/TokenItems";
 import BanklessInput from "@/components/ui/BanklessInput";
 import BanklessSelect from "@/components/ui/BanklessSelect";
-import { ArrowPathIcon } from "@heroicons/react/24/outline";
-import { Button } from "@material-tailwind/react";
-import Image from "next/legacy/image";
-import { useEffect, useState } from "react";
-
-const TokenItems = ({ token }) => {
-  return (
-    <div className="flex items-center gap-1">
-      <Image
-        src={`/images/home/coins/${token}.svg`}
-        width={20}
-        height={20}
-        alt={token + " logo"}
-      />
-
-      <p className="text-sm font-medium text-white">{token.toUpperCase()}</p>
-    </div>
-  );
-};
 
 const SwapBody = () => {
   const [swappingToken, setSwappingToken] = useState(0);
-  const [updateSelectedToken, setUpdateSelectedToken] = useState(false);
-  const [selectedSwappingToken, setSelectedSwappingToken] = useState(null);
-  const [selectedReceivingToken, setSelectedReceivingToken] = useState(null);
+  const [selectedSwappingToken, setSelectedSwappingToken] = useState("Token");
+  const [selectedReceivingToken, setSelectedReceivingToken] = useState("Token");
 
-  const handleSwappingToken = (option) => {
-    setSelectedSwappingToken(option.props.token);
-  };
-
-  const handleReceivingToken = (option) => {
-    setSelectedReceivingToken(option.props.token);
-  };
+  const options = [
+    <TokenItems key="bank" token="bank" />,
+    <TokenItems key="eth" token="eth" />,
+    <TokenItems key="usdc" token="usdc" />,
+    <TokenItems key="usdt" token="usdt" />,
+    <TokenItems key="base" token="base" />,
+  ];
 
   const handleSwapButton = () => {
     swappingToken === 0 ? setSwappingToken(1) : setSwappingToken(0);
@@ -43,10 +29,6 @@ const SwapBody = () => {
     setSelectedSwappingToken(selectedReceivingToken);
     setSelectedReceivingToken(temp);
   };
-
-  useEffect(() => {
-    setUpdateSelectedToken((prev) => !prev);
-  }, [swappingToken]);
 
   return (
     <section className="flex flex-col items-center space-y-3">
@@ -70,17 +52,11 @@ const SwapBody = () => {
 
           <div className="flex-[2]">
             <BanklessSelect
-              options={[
-                <TokenItems key="bank" token="bank" />,
-                <TokenItems key="eth" token="eth" />,
-                <TokenItems key="usdc" token="usdc" />,
-                <TokenItems key="usdt" token="usdt" />,
-                <TokenItems key="base" token="base" />,
-              ]}
+              options={options}
               id="token"
               label="Token"
-              defaultOption="Token"
-              onOptionSelect={handleSwappingToken}
+              selected={selectedSwappingToken}
+              setSelected={setSelectedSwappingToken}
             />
           </div>
         </div>
@@ -91,7 +67,7 @@ const SwapBody = () => {
               3000{" "}
               <span className="prevent-select">
                 {selectedSwappingToken
-                  ? selectedSwappingToken.toUpperCase()
+                  ? selectedSwappingToken?.props?.token.toUpperCase()
                   : ""}
               </span>
             </p>{" "}
@@ -113,18 +89,21 @@ const SwapBody = () => {
       selectedReceivingToken &&
       selectedSwappingToken === selectedReceivingToken ? (
         <div className="flex h-10 w-full items-center justify-center rounded-lg bg-red-500 text-sm font-medium text-white">
-          <p>
-            You can&apos;t swap{" "}
-            <span className="prevent-select">
-              {selectedSwappingToken ? selectedSwappingToken.toUpperCase() : ""}
-            </span>{" "}
-            for{" "}
-            <span className="prevent-select">
-              {selectedReceivingToken
-                ? selectedReceivingToken.toUpperCase()
-                : ""}
-            </span>
-          </p>
+          {selectedSwappingToken === "Token" &&
+          selectedReceivingToken === "Token" ? (
+            <p>Select a token to swap</p>
+          ) : (
+            <p>
+              You can&apos;t swap{" "}
+              <span className="prevent-select">
+                {selectedSwappingToken ? selectedSwappingToken : ""}
+              </span>{" "}
+              for{" "}
+              <span className="prevent-select">
+                {selectedReceivingToken ? selectedReceivingToken : ""}
+              </span>
+            </p>
+          )}
         </div>
       ) : (
         <Button
@@ -155,17 +134,11 @@ const SwapBody = () => {
 
           <div className="flex-[2]">
             <BanklessSelect
-              options={[
-                <TokenItems key="bank" token="bank" />,
-                <TokenItems key="eth" token="eth" />,
-                <TokenItems key="usdc" token="usdc" />,
-                <TokenItems key="usdt" token="usdt" />,
-                <TokenItems key="base" token="base" />,
-              ]}
+              options={options}
               id="token"
               label="Token"
-              defaultOption="Token"
-              onOptionSelect={handleReceivingToken}
+              selected={selectedReceivingToken}
+              setSelected={setSelectedReceivingToken}
             />
           </div>
         </div>
@@ -176,7 +149,7 @@ const SwapBody = () => {
               3000{" "}
               <span className="prevent-select">
                 {selectedReceivingToken
-                  ? selectedReceivingToken.toUpperCase()
+                  ? selectedReceivingToken?.props?.token.toUpperCase()
                   : ""}
               </span>
             </p>{" "}

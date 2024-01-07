@@ -14,7 +14,7 @@ const DepositBody = () => {
   const [beneficiary, setBeneficiary] = useState(null);
 
   const [address, setAddress] = useState(null);
-  const [selectedToken, setSelectedToken] = useState(null);
+  const [selectedToken, setSelectedToken] = useState("Select Your Token");
 
   const handleTokenSelect = (option) => {
     setSelectedToken(option);
@@ -44,8 +44,8 @@ const DepositBody = () => {
           options={["BANK", "ETH", "USDC", "USDT", "BASE"]}
           id="token"
           label="Select Token"
-          defaultOption="Select Your Token"
-          onOptionSelect={handleTokenSelect}
+          selected={selectedToken}
+          setSelected={setSelectedToken}
         />
 
         <div className="space-y-2">
