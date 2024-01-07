@@ -13,7 +13,7 @@ export default function NFTs() {
       <div className="col-span-3">
         <NFTsList />
       </div>
-      <div className="col-span-2">
+      <div className="col-span-2 ">
         <NFTsSelected />
       </div>
     </section>
