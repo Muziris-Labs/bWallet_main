@@ -12,18 +12,8 @@ import BanklessSelect from "@/components/ui/BanklessSelect";
 import { DefaultButton } from "@/components/ui/ClientButtons";
 
 const TransferBody = () => {
-  const [fiatValue, setFiatValue] = useState(null);
-  const [selectedToken, setSelectedToken] = useState(null);
-
-  const handleTokenSelect = (option) => {
-    setSelectedToken(option);
-    console.log("Seleted option is: ", selectedToken);
-  };
-
-  const handleFiatSelect = (option) => {
-    setFiatValue(option);
-    console.log("Selected option is: ", fiatValue);
-  };
+  const [fiatValue, setFiatValue] = useState("USD");
+  const [selectedToken, setSelectedToken] = useState("Select Your Token");
 
   return (
     <section className="space-y-6">
@@ -31,8 +21,8 @@ const TransferBody = () => {
         options={["BANK", "ETH", "USDC", "USDT", "BASE"]}
         id="token"
         label="Select Token"
-        defaultOption="Select Your Token"
-        onOptionSelect={handleTokenSelect}
+        selected={selectedToken}
+        setSelected={setSelectedToken}
       />
 
       <BanklessInput
@@ -74,8 +64,8 @@ const TransferBody = () => {
           options={["USD"]}
           id="fiat"
           label="Fiat Value"
-          defaultOption="USD"
-          onOptionSelect={handleFiatSelect}
+          selected={fiatValue}
+          setSelected={setFiatValue}
         />
       </div>
 

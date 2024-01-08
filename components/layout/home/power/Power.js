@@ -48,8 +48,8 @@ const Power = () => {
           <div className="mx-auto max-w-xs space-y-2">
             <h4 className="text-2xl font-bold">On Chain recovery</h4>
             <p className="text-base text-gray-400">
-              Recover your crypto eallets with smart contract if you forget your
-              passphrases.
+              Recover your crypto wallets with smart contract if you forget your
+              pass phrases.
             </p>
           </div>
         </div>
