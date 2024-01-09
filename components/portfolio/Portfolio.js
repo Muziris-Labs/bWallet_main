@@ -5,7 +5,7 @@ import PortfolioAssets from './PortfolioAssets'
 
 export default function Portfolio() {
   return (
-    <div className='w-[70%] bg-background-black p-4 rounded-xl'>
+    <div className='w-[100%] bg-background-black p-4 rounded-xl'>
         <PortfolioGraph />
         <PortfolioAssets />
     </div>

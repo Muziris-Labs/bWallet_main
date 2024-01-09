@@ -1,7 +1,11 @@
 import TokenList from "./TokenList";
 
 const Tokens = () => {
-  return <TokenList />;
+  return(
+    <div className="mt-6 ">
+      <TokenList />
+    </div>
+  ) ;
 };
 
 export default Tokens;
