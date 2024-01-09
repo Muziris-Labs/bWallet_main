@@ -20,6 +20,8 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #141414;
   font-family: "grotesque", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #141414;
 }
 
 ::-webkit-scrollbar {
