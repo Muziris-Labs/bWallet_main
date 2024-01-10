@@ -17,13 +17,15 @@ const CardDetails = ({ style }) => {
             className="md:h-11 md:w-11 lg:h-12 lg:w-12"
           />
 
-          <Image
-            alt=""
-            src="/images/home/2-circle.svg"
-            width={80}
-            height={56}
-            className="md:h-11 md:w-16 lg:h-14 lg:w-20"
-          />
+          <div className="flex items-center rounded-lg bg-black/60 p-1.5">
+            <Image
+              alt=""
+              src="/logo-white.svg"
+              width={32}
+              height={32}
+              className="md:h-11 md:w-16 lg:h-14 lg:w-20"
+            />
+          </div>
         </div>
 
         <p className="text-left text-lg text-white lg:text-xl">
@@ -33,16 +35,16 @@ const CardDetails = ({ style }) => {
         <div className="flex justify-between text-white">
           <div>
             <span className="block text-sm opacity-50 lg:text-base">
-              BanklessCard
+              Bankless Card
             </span>
             <span className="text-lg lg:text-xl">B-wallet.eth</span>
           </div>
 
           <div>
             <span className="block text-sm opacity-50 lg:text-base">
-              Valid thru
+              Your Name
             </span>{" "}
-            <span className="text-lg lg:text-xl">12/29</span>
+            <span className="text-lg lg:text-xl">Bankless</span>
           </div>
         </div>
       </div>

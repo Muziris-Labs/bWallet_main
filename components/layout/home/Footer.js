@@ -12,13 +12,9 @@ const Footer = () => {
         control over your digital assets and transactions.
       </p>
 
-      <Image
-        src="/images/home/breaker.svg"
-        alt="hero-bg"
-        width={1920}
-        height={1}
-        className="mx-auto mb-4 mt-12 h-3 w-full md:mb-6 md:mt-16 md:w-4/5"
-      />
+      <div className="mx-auto mb-4 mt-12 h-3 w-full md:mb-6 md:mt-16 md:w-4/5">
+        <Image src="/images/home/breaker.svg" alt="" width={1920} height={1} />
+      </div>
 
       <div className="mx-2 flex justify-between pb-4">
         <Logo />
