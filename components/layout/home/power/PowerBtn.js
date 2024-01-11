@@ -1,4 +1,4 @@
-import { CreateWalletBtn } from "@/components/ui/ClientButtons";
+import { CreateWalletBtn } from "@/components/ui/buttons/ClientButtons";
 import GradientBorder from "@/components/ui/GradientBorder";
 
 const PowerBtn = () => {

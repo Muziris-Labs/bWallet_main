@@ -1,7 +1,7 @@
 import {
   CreateWalletBtn,
   HardwareWalletBtn,
-} from "@/components/ui/ClientButtons";
+} from "@/components/ui/buttons/ClientButtons";
 
 const HeaderBtn = () => {
   return (

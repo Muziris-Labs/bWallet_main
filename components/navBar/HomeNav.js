@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import MainNav from "./MainNav";
-import { LaunchAppBtn } from "@/components/ui/ClientButtons";
+import { LaunchAppBtn } from "@/components/ui/buttons/ClientButtons";
 
 const HomeNav = () => {
   const activeNav = usePathname();

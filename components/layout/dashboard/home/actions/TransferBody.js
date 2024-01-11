@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import BanklessInput from "@/components/ui/BanklessInput";
 import BanklessSelect from "@/components/ui/BanklessSelect";
-import { DefaultButton } from "@/components/ui/ClientButtons";
+import { DefaultButton } from "@/components/ui/buttons/ClientButtons";
 
 const TransferBody = () => {
   const [fiatValue, setFiatValue] = useState("USD");

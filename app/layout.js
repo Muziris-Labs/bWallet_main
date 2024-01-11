@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import ReduxProvider from "@/provider/ReduxProvider";
 
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const grotesque = localFont({
   src: [
@@ -84,7 +85,22 @@ export default function RootLayout({ children }) {
       lang="en"
     >
       <body className="overflow-x-hidden font-grotesque">
-        <ReduxProvider store={store}>{children}</ReduxProvider>
+        <ReduxProvider store={store}>
+          {children}
+
+          <Toaster
+            position="bottom-right"
+            reverseOrder={false}
+            toastOptions={{
+              style: {
+                fontFamily: "var(--font-grotesque)",
+                background: "#000",
+                color: "#fff",
+                zIndex: 9999,
+              },
+            }}
+          />
+        </ReduxProvider>
       </body>
     </html>
   );
