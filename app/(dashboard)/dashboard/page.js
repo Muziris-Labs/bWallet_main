@@ -1,6 +1,6 @@
 import Tokens from "@/components/layout/dashboard/home/tokens/Tokens";
 import Actions from "@/components/layout/dashboard/home/actions/Actions";
-import Portfolio from "@/components/layout/dashboard/home/main/Portfolio";
+import Portfolio from "@/components/layout/dashboard/home/portfolio/Portfolio";
 import Transactions from "@/components/layout/dashboard/home/transactions/Transactions";
 
 export const metadata = {

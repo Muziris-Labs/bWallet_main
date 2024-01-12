@@ -1,4 +1,4 @@
-/* .ripple-button {
+.ripple-button {
   position: relative;
   overflow: hidden;
 }
@@ -6,7 +6,7 @@
 .ripple-button .ripple {
   position: absolute;
   border-radius: 50%;
-  background-color: rgba(190, 79, 79, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   transform: scale(0);
   animation: ripple 0.6s linear;
 }
@@ -16,4 +16,4 @@
     transform: scale(4);
     opacity: 0;
   }
-} */
+}

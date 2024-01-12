@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import CopyButton from "@/components/ui/CopyButton";
+import CopyButton from "@/components/ui/buttons/CopyButton";
 import BanklessInput from "@/components/ui/BanklessInput";
 import BanklessSelect from "@/components/ui/BanklessSelect";
 

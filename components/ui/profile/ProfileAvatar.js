@@ -2,7 +2,7 @@
 import { useAccount } from "wagmi";
 import Pubkey from "../Pubkey";
 import ProfileMenu from "./ProfileMenu";
-import { DefaultButton } from "../ClientButtons";
+import { DefaultButton } from "../buttons/ClientButtons";
 import { useDispatch } from "react-redux";
 import { handleLoginModal } from "@/redux/slice/modalSlice";
 
