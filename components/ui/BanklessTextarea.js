@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 
-const BanklessTextarea = ({ id, span, rows = 5, label, placeholder }) => {
+const BanklessTextarea = ({
+  id,
+  span,
+  rows = 5,
+  label,
+  placeholder,
+  required = false,
+}) => {
   const [input, setInput] = useState("");
 
   return (
@@ -11,7 +18,9 @@ const BanklessTextarea = ({ id, span, rows = 5, label, placeholder }) => {
         htmlFor={id}
         className="prevent-select flex items-center gap-2 text-sm text-gray-300"
       >
-        {label}
+        <span>
+          {label} {required && <span className="text-red-500">*</span>}
+        </span>
 
         <span className="text-xs text-gray-600">{span}</span>
       </label>

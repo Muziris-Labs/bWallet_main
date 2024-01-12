@@ -1,4 +1,4 @@
-import AddToContactsModal from "@/components/modal/AddToContactsModal";
+import NewContactsModal from "@/components/modal/NewContactsModal";
 
 export const metadata = {
   title: "Bankless | Contacts",
@@ -8,7 +8,7 @@ export const metadata = {
 export default function ContactsLayout({ children }) {
   return (
     <>
-      <AddToContactsModal />
+      <NewContactsModal />
       {children}
     </>
   );

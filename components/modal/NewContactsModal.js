@@ -1,13 +1,10 @@
 "use client";
 
 import {
-  Button,
   Dialog,
   DialogHeader,
   DialogBody,
   DialogFooter,
-  Input,
-  Textarea,
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -16,11 +13,12 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 
 import { toggleAddContactModal } from "@/redux/slice/modalsSlice";
+
 import BanklessInput from "../ui/BanklessInput";
 import BanklessTextarea from "../ui/BanklessTextarea";
-import RippleButton from "../ui/buttons/RippleButton";
+import { DefaultButton } from "../ui/buttons/DefaultButton";
 
-const AddToContactsModal = () => {
+const NewContactsModal = () => {
   const dispatch = useDispatch();
 
   const open = useSelector((state) => state.modals.openAddContact);
@@ -74,38 +72,45 @@ const AddToContactsModal = () => {
 
         <div className="grid gap-6">
           <BanklessInput
-            type={"text"}
             id={"pushAddress"}
+            type={"text"}
             label="Address"
+            input={address}
+            setInput={setAddress}
             placeholder={"0x9621ouIzLAa9F4f3f7bB8aDdFb8C0"}
-            required
+            required={true}
           />
 
           <BanklessTextarea
             id={"pushConnectionMessage"}
+            input={message}
+            setInput={setMessage}
             label="Connection Message"
             placeholder={"Hey, I want to connect with you."}
-            required
+            required={true}
           />
         </div>
       </DialogBody>
 
       <DialogFooter className="space-x-2">
-        <Button variant="outlined" color="red">
-          cancel
-        </Button>
-
-        <Button
-          variant="gradient"
-          color="gray"
-          onClick={handleSendRequest}
-          className=""
+        <DefaultButton
+          variant="outlined"
+          color="red"
+          style="uppercase"
+          onClick={handleOpen}
         >
-          send request
-        </Button>
+          Cancel
+        </DefaultButton>
+
+        <DefaultButton
+          style="uppercase bg-gradient-primary text-white"
+          onClick={handleSendRequest}
+        >
+          Send Request
+        </DefaultButton>
       </DialogFooter>
     </Dialog>
   );
 };
 
-export default AddToContactsModal;
+export default NewContactsModal;

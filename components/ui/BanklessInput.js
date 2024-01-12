@@ -1,25 +1,26 @@
 "use client";
 
-import { useState } from "react";
-
 const BanklessInput = ({
   label,
   id,
   type,
-  placeholder,
   span,
   icon,
+  input,
+  setInput,
   readOnly = false,
+  placeholder,
+  required = false,
 }) => {
-  const [input, setInput] = useState("");
-
   return (
     <div className="w-full space-y-2">
       <label
         htmlFor={id}
         className="prevent-select flex items-center gap-2 text-sm text-gray-300"
       >
-        {label}
+        <span>
+          {label} {required && <span className="text-red-500">*</span>}
+        </span>
 
         <span className="text-xs text-gray-600">{span}</span>
       </label>
