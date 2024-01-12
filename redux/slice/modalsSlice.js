@@ -4,7 +4,7 @@ const modalsSlice = createSlice({
   name: "modals",
 
   initialState: {
-    openAddContact: true,
+    openAddContact: false,
   },
 
   reducers: {
