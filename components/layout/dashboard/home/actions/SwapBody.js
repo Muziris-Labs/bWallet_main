@@ -1,12 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import SwapInput from "./swapBody/SwapInput";
 import SwapButton from "./swapBody/SwapButton";
 
 const SwapBody = () => {
   const [swappingToken, setSwappingToken] = useState(0);
+
+  const [swappingAmount, setSwappingAmount] = useState();
+  const [receivingAmount, setReceivingAmount] = useState();
+
   const [selectedSwappingToken, setSelectedSwappingToken] = useState("Token");
   const [selectedReceivingToken, setSelectedReceivingToken] = useState("Token");
 
@@ -18,16 +22,15 @@ const SwapBody = () => {
     setSelectedReceivingToken(temp);
   };
 
-  useEffect(() => {
-    console.log(selectedSwappingToken);
-    console.log(selectedReceivingToken);
-  }, [selectedSwappingToken, selectedReceivingToken]);
-
   return (
     <section className="flex flex-col items-center space-y-3">
       <SwapInput
-        swappingToken={swappingToken}
+        id="swappingAmount"
+        selectId="swappingToken"
         swappingNumber={0}
+        amount={swappingAmount}
+        setAmount={setSwappingAmount}
+        swappingToken={swappingToken}
         selectedToken={selectedSwappingToken}
         setSelectedToken={setSelectedSwappingToken}
       />
@@ -39,8 +42,12 @@ const SwapBody = () => {
       />
 
       <SwapInput
-        swappingToken={swappingToken}
+        id="receivingAmount"
+        selectId="receivingToken"
         swappingNumber={1}
+        amount={receivingAmount}
+        swappingToken={swappingToken}
+        setAmount={setReceivingAmount}
         selectedToken={selectedReceivingToken}
         setSelectedToken={setSelectedReceivingToken}
       />

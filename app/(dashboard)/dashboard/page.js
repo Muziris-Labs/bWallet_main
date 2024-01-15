@@ -11,10 +11,10 @@ export const metadata = {
 export default function Dashboard() {
   return (
     <article className="flex gap-5">
-      <section>
+      {/* <section>
         <Portfolio />
         <Tokens />
-      </section>
+      </section> */}
 
       <aside className="w-full max-w-sm space-y-6">
         <Actions />

@@ -16,10 +16,6 @@ const DepositBody = () => {
   const [address, setAddress] = useState(null);
   const [selectedToken, setSelectedToken] = useState("Select Your Token");
 
-  const handleTokenSelect = (option) => {
-    setSelectedToken(option);
-  };
-
   useEffect(() => {
     if (selectedToken) {
       setAddress("0xAl13FmcAa9d2f2a9c0f1f5d7B4fC5B4fC5B4fC5B");
@@ -42,7 +38,7 @@ const DepositBody = () => {
       <div className="space-y-4">
         <BanklessSelect
           options={["BANK", "ETH", "USDC", "USDT", "BASE"]}
-          id="token"
+          id="depositToken"
           label="Select Token"
           selected={selectedToken}
           setSelected={setSelectedToken}
