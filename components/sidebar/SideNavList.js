@@ -73,7 +73,7 @@ const SideNavList = ({ open, handleOpen }) => {
 
       <SideNavItem
         label="Transactions"
-        href="/transaction"
+        href="/transactions"
         icon={<ArrowsUpDownIcon />}
       />
 
