@@ -5,9 +5,13 @@ import BanklessInput from "@/components/ui/BanklessInput";
 import BanklessSelect from "@/components/ui/BanklessSelect";
 
 const SwapInput = ({
+  id,
+  amount,
+  selectId,
+  setAmount,
   swappingToken,
-  swappingNumber,
   selectedToken,
+  swappingNumber,
   setSelectedToken,
 }) => {
   const options = [
@@ -24,7 +28,7 @@ const SwapInput = ({
         <div className="flex-[3]">
           <BanklessInput
             label="Amount"
-            id="amount"
+            id={id}
             type="text"
             placeholder="0.00"
             icon={
@@ -34,14 +38,16 @@ const SwapInput = ({
                 </span>
               )
             }
+            input={amount}
+            setInput={setAmount}
           />
         </div>
 
         <div className="flex-[2]">
           <BanklessSelect
-            options={options}
-            id="token"
+            id={selectId}
             label="Token"
+            options={options}
             selected={selectedToken}
             setSelected={setSelectedToken}
           />
