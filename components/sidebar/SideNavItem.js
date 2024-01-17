@@ -8,23 +8,29 @@ import { useState } from "react";
 
 import GradientIcon from "../ui/GradientIcon";
 
-const SideNavItem = ({ label, icon, fill, href }) => {
+const SideNavItem = ({ label, icon, fill, href, active, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link href={href}>
+    <Link href={href} onClick={onClick}>
       <ListItem
-        className="sideNavItem text-white hover:bg-black focus:bg-black active:bg-black"
+        className={`sideNavItem text-white hover:bg-black focus:bg-black active:bg-black ${
+          active ? "bg-black" : ""
+        }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <ListItemPrefix>
-          <GradientIcon icon={icon} isHovered={isHovered} fill={fill} />
+          <GradientIcon
+            icon={icon}
+            isHovered={isHovered || active}
+            fill={fill}
+          />
         </ListItemPrefix>
 
         <p
           className={`prevent-select font-grotesque text-xl text-white ${
-            isHovered ? "font-bold gradient-text" : ""
+            isHovered || active ? "font-bold gradient-text" : ""
           }`}
         >
           {label}

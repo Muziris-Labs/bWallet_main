@@ -13,7 +13,7 @@ const BanklessInput = ({
   required = false,
 }) => {
   return (
-    <div className="w-full space-y-2">
+    <div className="3xl:space-y-2 w-full space-y-1.5">
       <label
         htmlFor={id}
         className="prevent-select flex items-center gap-2 text-sm text-gray-300"

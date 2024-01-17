@@ -1,4 +1,4 @@
-import DepositBody from "@/components/layout/dashboard/home/actions/DepositBody";
+import DepositBody from "@/components/layout/dashboard/wallets/deposit/DepositBody";
 
 export const metadata = {
   title: "B-Wallet | Deposit",
