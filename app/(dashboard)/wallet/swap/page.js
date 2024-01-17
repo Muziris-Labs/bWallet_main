@@ -1,4 +1,4 @@
-import SwapBody from "@/components/layout/dashboard/home/actions/SwapBody";
+import SwapBody from "@/components/layout/dashboard/wallets/swap/SwapBody";
 
 export const metadata = {
   title: "B-Wallet | Swap",

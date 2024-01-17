@@ -1,8 +1,8 @@
 import { TabPanel, TabsBody } from "@material-tailwind/react";
 
-import SwapBody from "../SwapBody";
-import DepositBody from "../DepositBody";
-import TransferBody from "../TransferBody";
+import SwapBody from "../../../wallets/swap/SwapBody";
+import DepositBody from "../../../wallets/deposit/DepositBody";
+import TransferBody from "../../../wallets/transfer/TransferBody";
 
 const ActionBody = () => {
   const data = [

@@ -12,6 +12,10 @@ module.exports = withMT({
 
   theme: {
     extend: {
+      screens: {
+        "3xl": "1540px",
+      },
+
       backgroundImage: {
         "gradient-primary": "linear-gradient(90deg, #D02129 0%, #750069 100%)",
         "gradient-primary-light":

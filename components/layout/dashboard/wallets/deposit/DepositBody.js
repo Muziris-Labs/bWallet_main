@@ -34,8 +34,8 @@ const DepositBody = () => {
   }, []);
 
   return (
-    <section className="space-y-6">
-      <div className="space-y-4">
+    <section className="3xl:space-y-6 space-y-5">
+      <div className="3xl:space-y-4 space-y-3">
         <BanklessSelect
           options={["BANK", "ETH", "USDC", "USDT", "BASE"]}
           id="depositToken"
@@ -77,7 +77,7 @@ const DepositBody = () => {
 
       <div className="h-px w-full bg-gray-700"></div>
 
-      <div className="space-y-4">
+      <div className="3xl:space-y-4 space-y-3">
         <p className="text-gray-300">IBAN DETAILS</p>
 
         <BanklessInput

@@ -10,9 +10,9 @@ import {
 import { useState } from "react";
 
 import Logo from "../Logo";
+import SideNav from "./SideNav";
 import SidebarBtn from "./SidebarBtn";
 import SideNavItem from "./SideNavItem";
-import SideNavList from "./SideNavList";
 import SidebarProfile from "./SidebarProfile";
 
 const Sidebar = () => {
@@ -48,7 +48,7 @@ const Sidebar = () => {
             <hr className="my-2 border-gray-500" />
           </div>
 
-          <SideNavList open={open} handleOpen={handleOpen} />
+          <SideNav open={open} handleOpen={handleOpen} />
 
           <SideNavItem
             label="Need Help?"

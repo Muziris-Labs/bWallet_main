@@ -23,8 +23,16 @@ const SideNavAccordion = ({
   label,
   icon,
   subLabel,
+  active,
+  onClick,
+  activeSubItem,
+  setActiveSubItem,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleSubItemClick = (item) => {
+    setActiveSubItem(item);
+  };
 
   return (
     <Accordion
@@ -41,22 +49,29 @@ const SideNavAccordion = ({
       <ListItem
         className={`p-0 font-grotesque hover:bg-black focus:bg-black active:bg-black ${
           open === number ? "bg-black" : ""
-        }`}
+        } ${active ? "bg-black" : "bg-transparent"}`}
         selected={open === number}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={onClick}
       >
         <AccordionHeader
           onClick={() => handleOpen(number)}
           className="border-b-0 p-3 text-white hover:font-bold hover:gradient-text"
         >
-          <ListItemPrefix>
-            <GradientIcon icon={icon} isHovered={isHovered} />
-          </ListItemPrefix>
+          <div className="flex">
+            <ListItemPrefix>
+              <GradientIcon icon={icon} isHovered={isHovered || active} />
+            </ListItemPrefix>
 
-          <Typography color="white" className="mr-auto text-xl">
-            {label}
-          </Typography>
+            <p
+              className={`text-xl text-white ${
+                isHovered || active ? "font-bold gradient-text" : "font-normal"
+              }`}
+            >
+              {label}
+            </p>
+          </div>
         </AccordionHeader>
       </ListItem>
 
@@ -69,6 +84,8 @@ const SideNavAccordion = ({
               href={item.href}
               icon={item.icon}
               fill={item.fill}
+              active={activeSubItem === item.href.split("/")[2]}
+              onClick={() => handleSubItemClick(item.href.split("/")[2])}
             />
           ))}
         </List>

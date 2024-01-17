@@ -1,4 +1,4 @@
-import TransferBody from "@/components/layout/dashboard/home/actions/TransferBody";
+import TransferBody from "@/components/layout/dashboard/wallets/transfer/TransferBody";
 
 export const metadata = {
   title: "B-Wallet | Transfer",

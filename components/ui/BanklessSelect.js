@@ -37,7 +37,7 @@ const BanklessSelect = ({
     <div ref={ref} className="prevent-select relative w-full">
       <label
         htmlFor={id}
-        className="mb-2 block text-sm font-medium text-gray-300"
+        className="3xl:mb-2 mb-1.5 block text-sm font-medium text-gray-300"
       >
         {label}
       </label>
