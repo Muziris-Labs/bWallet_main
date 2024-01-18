@@ -1,3 +1,4 @@
+import QrModal from "@/components/modal/QrModal";
 import Sidebar from "@/components/sidebar/Sidebar";
 import PageHeader from "@/components/pageHeader/PageHeader";
 
@@ -8,13 +9,17 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="hero-bg relative flex gap-5">
-      <Sidebar />
+    <>
+      <QrModal />
 
-      <main className="relative w-full space-y-5 bg-fixed pr-5">
-        <PageHeader />
-        {children}
-      </main>
-    </div>
+      <div className="hero-bg relative flex gap-5">
+        <Sidebar />
+
+        <main className="relative w-full space-y-5 bg-fixed pr-5">
+          <PageHeader />
+          {children}
+        </main>
+      </div>
+    </>
   );
 }
