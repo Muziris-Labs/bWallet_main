@@ -2,7 +2,7 @@ import ActionTabs from "./actionTab/ActionTab";
 
 const Actions = () => {
   return (
-    <section className="rounded-lg bg-background-black p-4">
+    <section className="overflow-hidden rounded-lg bg-background-black p-4">
       <ActionTabs />
     </section>
   );

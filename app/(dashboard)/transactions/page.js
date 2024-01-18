@@ -1,8 +1,16 @@
+import Transactions from "@/components/layout/dashboard/transactions/Transactions";
+
 export const metadata = {
   title: "B-Wallet | Transactions",
   description: "By Bankless DAO",
 };
 
-export default function Transactions() {
-  return <div>Transactions</div>;
-}
+const TransactionsPage = () => {
+  return (
+    <section>
+      <Transactions />
+    </section>
+  );
+};
+
+export default TransactionsPage;
