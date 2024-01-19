@@ -10,7 +10,7 @@ const TransactionList = () => {
       amount: 0.01,
       currency: "ETH",
       to: "0x1234...5678",
-      TxID: "0xIrT4...77up",
+      status:"Completed",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const TransactionList = () => {
       amount: 0.01,
       currency: "ETH",
       to: "0x1234...5678",
-      TxID: "0xIrT4...77up",
+      status:"Failed",
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const TransactionList = () => {
       amount: 0.01,
       currency: "ETH",
       to: "0x1234...5678",
-      TxID: "0xIrT4...77up",
+      status:"Completed",
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const TransactionList = () => {
       amount: 0.01,
       currency: "ETH",
       to: "0x1234...5678",
-      TxID: "0xIrT4...77up",
+      status:"Completed",
     },
     {
       id: 5,
@@ -50,7 +50,7 @@ const TransactionList = () => {
       amount: 0.01,
       currency: "ETH",
       to: "0x1234...5678",
-      TxID: "0xIrT4...77up",
+      status:"Pending",
     },
     {
       id: 6,
@@ -60,7 +60,7 @@ const TransactionList = () => {
       amount: 0.01,
       currency: "ETH",
       to: "0x1234...5678",
-      TxID: "0xIrT4...77up",
+      status:"Completed",
     },
   ];
 
