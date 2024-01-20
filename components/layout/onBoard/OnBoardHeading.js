@@ -1,8 +1,8 @@
 const OnBoardHeading = ({ heading, paragraph }) => {
   return (
     <>
-      <h2>{heading}</h2>
-      <p>{paragraph}</p>
+      <h2 className="text-4xl text-center">{heading}</h2>
+      {/* <p>{paragraph}</p> */}
     </>
   );
 };

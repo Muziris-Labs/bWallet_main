@@ -2,6 +2,7 @@
 import { useDispatch,useSelector } from "react-redux";
 import NFTsItem from "./NFTsItem";
 import { setActiveNft } from "@/redux/slice/nftsSlice";
+import { useEffect } from "react";
 
 const NFTsList = () => {
 
@@ -79,7 +80,6 @@ const NFTsList = () => {
   ];
 
   const setNftDetails = (nft) => {
-    console.log(activeNft,"Hello",nft)
     dispatch(
       setActiveNft(
         {
@@ -95,11 +95,15 @@ const NFTsList = () => {
       ),
     );
   };
+
+  useEffect(()=>{
+    setNftDetails(nftData[0])
+  },[])
   return (
     <div className="grid w-full grid-cols-3 gap-4">
       {nftData.map((nft, i) => {
         return (
-          <div key={i} onClick={()=>setNftDetails(nft)}>
+          <div key={i} onClick={()=>setNftDetails(nft)} >
             <NFTsItem key={i} data={nft} />
           </div>
         );

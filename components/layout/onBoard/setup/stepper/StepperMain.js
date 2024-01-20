@@ -4,7 +4,7 @@ import TwoFactorAuth from "../step/TwoFactorAuth";
 
 const StepperMain = ({ activeStep }) => {
   return (
-    <section>
+    <section className="mt-32">
       {activeStep === 0 ? (
         <SetupAccount />
       ) : activeStep === 1 ? (

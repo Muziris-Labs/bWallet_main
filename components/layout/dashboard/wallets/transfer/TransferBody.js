@@ -1,5 +1,7 @@
 "use client";
 
+import { Radio } from "@material-tailwind/react";
+
 import {
   ArrowUpRightIcon,
   ArrowsRightLeftIcon,
@@ -22,7 +24,7 @@ const TransferBody = () => {
 
   return (
     <section className="space-y-6">
-      <div className="3xl:space-y-6 space-y-3">
+      <div className="space-y-3 3xl:space-y-6">
         <BanklessSelect
           options={["BANK", "ETH", "USDC", "USDT", "BASE"]}
           id="transferToken"
@@ -40,7 +42,7 @@ const TransferBody = () => {
           placeholder="bankless.eth"
         />
 
-        <BanklessInput
+        {/* <BanklessInput
           id="iban"
           label="IBAN"
           type="text"
@@ -51,7 +53,18 @@ const TransferBody = () => {
           icon={
             <QuestionMarkCircleIcon className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 cursor-pointer text-gray-400" />
           }
-        />
+        /> */}
+        <div>
+          <label
+            className="mb-1.5 block text-sm font-medium text-gray-300 3xl:mb-2"
+          >
+            Pay With
+          </label>
+          <div className="flex gap-10">
+            <Radio name="type" label="GHO" defaultChecked color="red"/>
+            <Radio name="type" label="ETH"  color="red"/>
+          </div>
+        </div>
 
         <div className="flex items-center gap-2">
           <BanklessInput

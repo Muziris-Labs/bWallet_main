@@ -17,11 +17,13 @@ export default function Setup() {
 
   return (
     <>
-      <section className="flex-1 p-8 px-7">
+      <section className="flex-1 p-8 px-7 ">
         <Logo />
-        <Heading heading={"Ok"} paragraph={"para"} />
-        <SetupStepper onStepChange={handleStepChange} />
-        <HardwareWallet />
+        <div className="flex flex-col items-center justify-center h-full">
+          <Heading heading={"Authenticate Your Wallet"} paragraph={"para"} />
+          <SetupStepper onStepChange={handleStepChange} />
+        </div>
+        {/* <HardwareWallet /> */}
       </section>
 
       <section className="grid-bg flex-1">

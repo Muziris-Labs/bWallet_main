@@ -12,7 +12,7 @@ const SetupStepper = ({ onStepChange }) => {
   const [isFirstStep, setIsFirstStep] = useState(false);
 
   const handleStepChange = (updater) => {
-    const newStep = updater(activeStep);
+    const newStep = updater;
     setActiveStep(newStep);
     onStepChange(newStep);
   };
@@ -21,12 +21,14 @@ const SetupStepper = ({ onStepChange }) => {
     <div className="w-full px-24 py-4">
       <StepperList
         activeStep={activeStep}
-        setActiveStep={handleStepChange}
+        setActiveStep={()=>handleStepChange(activeStep)}
         setIsFirstStep={setIsFirstStep}
         setIsLastStep={setIsLastStep}
       />
 
       <StepperMain activeStep={activeStep} />
+
+      <h1></h1>
 
       <StepperBtn
         isFirstStep={isFirstStep}

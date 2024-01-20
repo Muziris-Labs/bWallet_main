@@ -20,22 +20,22 @@ const StepperList = ({
         activeStep={activeStep}
         setActiveStep={setActiveStep}
         stepNo={0}
-        stepDes={"ABC"}
+        stepDes={"Add Passkey"}
       />
 
       <StepperItem
         activeStep={activeStep}
         setActiveStep={setActiveStep}
         stepNo={1}
-        stepDes={"ABC"}
+        stepDes={"Assign Domain"}
       />
 
-      <StepperItem
+      {/* <StepperItem
         activeStep={activeStep}
         setActiveStep={setActiveStep}
         stepNo={2}
         stepDes={"ABC"}
-      />
+      /> */}
     </Stepper>
   );
 };

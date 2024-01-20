@@ -15,6 +15,7 @@
     "axios": "^1.6.0",
     "ethers": "5.7",
     "file-saver": "^2.0.5",
+    "magic-sdk": "^22.0.0",
     "next": "14.0.1",
     "pino-pretty": "^10.2.3",
     "qr-code-styling": "^1.6.0-rc.1",
