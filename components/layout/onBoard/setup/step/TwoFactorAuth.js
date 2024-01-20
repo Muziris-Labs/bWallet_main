@@ -18,7 +18,7 @@ const TwoFactorAuth = () => {
       <Input
         size="lg"
         placeholder="name@valerium"
-        className=" !border-t-blue-gray-400 text-white focus:!border-gray-100 w-[130%]"
+        className=" !border-t-blue-gray-400 text-white focus:!border-gray-100 w-[120%]"
         labelProps={{
           className: "before:content-none after:content-none",
         }}

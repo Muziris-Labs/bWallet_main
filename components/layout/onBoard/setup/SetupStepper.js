@@ -18,13 +18,16 @@ const SetupStepper = ({ onStepChange }) => {
   };
 
   return (
-    <div className="w-full px-24 py-4">
-      <StepperList
-        activeStep={activeStep}
-        setActiveStep={()=>handleStepChange(activeStep)}
-        setIsFirstStep={setIsFirstStep}
-        setIsLastStep={setIsLastStep}
-      />
+    <div className="w-[70%] px-24 py-4 flex flex-col justify-center items-center">
+      <div className="w-full ">
+        <StepperList
+          activeStep={activeStep}
+          setActiveStep={()=>handleStepChange(activeStep)}
+          setIsFirstStep={setIsFirstStep}
+          setIsLastStep={setIsLastStep}
+        /> 
+      </div>
+      
 
       <StepperMain activeStep={activeStep} />
 

@@ -17,7 +17,7 @@ const StepperBtn = ({ isFirstStep, isLastStep, setActiveStep }) => {
     }, 3000);
   }
   return (
-    <div className="mt-32 flex justify-between">
+    <div className="mt-32 flex justify-between w-full">
       <Button onClick={(handlePrev)} disabled={isFirstStep}>
         Prev
       </Button>
